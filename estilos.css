@@ -3,10 +3,21 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-body{
-    background-color: #121524;
+html{
+    scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #4e5399;
+}
+
+
+body {
+    background-color: #121524;
+    transition: .5s ease all;
+}
+
 header {
     width: 100%;
     height: 12vh;
@@ -24,7 +35,7 @@ nav {
     align-items: center;
 }
 
-nav img{
+nav img {
     width: 50px;
     height: 50px;
     object-fit: contain;
@@ -36,12 +47,14 @@ nav img{
     width: 100%;
     height: 76vh;
     overflow: hidden;
+    transition: .5s ease all;
 }
 
 .contenido .contenido-section {
     width: 90%;
     margin: auto;
     display: flex;
+    max-width: 1200px;
 }
 
 .contenido-section .imgs {
@@ -59,7 +72,7 @@ nav img{
 }
 
 .formulario {
-    width:50%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,14 +95,14 @@ nav img{
 
 }
 
-form i{
+form i {
     font-size: 80px;
     margin-bottom: 20px;
     color: #4e5399;
-    text-shadow: 0 0 10px  rgba(107, 126, 224, 0.308);
+    text-shadow: 0 0 10px rgba(107, 126, 224, 0.308);
 }
 
-form input{
+form input {
     width: 75%;
     outline: none;
     border: none;
@@ -102,13 +115,15 @@ form input{
     font-size: 15px;
     transition: .6s ease all;
     color: #121524a4;
+
 }
 
-form input:focus{
+form input:focus {
     border: 2px solid #454983bb;
+    
 }
 
-form button{
+form button {
     width: 75%;
     border-radius: 40px;
     outline: none;
@@ -120,14 +135,14 @@ form button{
     margin-bottom: 10px;
 }
 
-form button:hover{
+form button:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
 
 
 
-form a{
+form a {
     font-size: 10px;
     font-weight: 300;
     text-decoration: none;
@@ -155,24 +170,49 @@ footer {
     .contenido-section .imgs {
         display: none;
     }
+
+    .contenido-section {
+        transition: .2s ease all;
+    }
+
     .formulario {
         width: 100%;
         height: 76vh;
-        overflow: visible;
+        overflow: auto;
+        
     }
-    form input{
+
+    nav{
+        font-size: 14px;
+    }
+
+}
+
+
+@media screen and (max-width : 500px) {
+    form input {
         width: 90%;
         padding: 10px;
         padding-left: 15px;
         padding-right: 15px;
     }
-    form button{
+
+    form button {
         width: 90%;
         padding: 16px;
     }
 
-    form a{
-       font-size:12px;
+    form a {
+        font-size: 12px;
+    }
+
+    header {
+        height: 100px;
+        overflow: visible;
+    }
+
+    footer {
+        height: 60px;
+        overflow: visible;
     }
 }
-
